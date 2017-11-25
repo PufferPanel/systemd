@@ -1,0 +1,15 @@
+[Unit]
+Description=pufferd daemon service
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/pufferd
+ExecStart=/usr/sbin/pufferd --run
+ExecStop=/usr/sbin/pufferd --shutdown $MAINPID
+User=pufferd
+Group=pufferd
+TimeoutStopSec=2m
+SendSIGKILL=no
+
+[Install]
+WantedBy=multi-user.target
