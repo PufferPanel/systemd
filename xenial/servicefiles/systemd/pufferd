@@ -3,7 +3,7 @@ Description=pufferd daemon service
 
 [Service]
 Type=simple
-WorkingDirectory=/srv/pufferd
+WorkingDirectory=/var/lib/pufferd
 ExecStart=/usr/sbin/pufferd --run
 ExecStop=/usr/sbin/pufferd --shutdown $MAINPID
 User=pufferd
