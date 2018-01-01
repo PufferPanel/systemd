@@ -4,8 +4,6 @@ Description=pufferd daemon service
 [Service]
 Type=simple
 WorkingDirectory=/var/lib/pufferd
-ExecStartPre=/bin/bash -c 'echo "DOCKER_API_VERSION=$(docker version --format '{{.Server.APIVersion}}')" > /etc/pufferd/.dockerversion'
-EnvironmentFile=-/etc/pufferd/.dockerversion
 ExecStart=/usr/sbin/pufferd --run
 ExecStop=/usr/sbin/pufferd --shutdown $MAINPID
 User=pufferd
